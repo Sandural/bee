@@ -1,14 +1,7 @@
 <script setup>
-import { ref, reactive } from "vue";
 import { NTabs, NTabPane } from "naive-ui";
 import ROWS from "@/components/rows/index.vue";
-
-let drag = ref(true);
-let pageArray = reactive([]);
-
-const log = () => {
-  console.log(drag.value);
-};
+import CONTENTS from "@/components/contents/index.vue";
 </script>
 
 <template>
@@ -35,13 +28,7 @@ const log = () => {
     </n-tabs>
   </div>
   <div class="temp-right">
-    <draggable group="page" v-model="pageArray" item-key="id" @change="log">
-      <template #item="{ element, index }">
-        <div class="draggable-Sidebar__2qD4V" :data-id="index">
-          <div v-html="element.svgDOM"></div>
-        </div>
-      </template>
-    </draggable>
+    <CONTENTS></CONTENTS>
   </div>
 </template>
 

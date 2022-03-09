@@ -1,8 +1,7 @@
 <script setup>
-import { ref } from "vue";
+// import { ref } from "vue";
 import draggle from "vuedraggable";
 
-let drag = ref(true);
 let myArray = [
   {
     svgDOM: `<svg
@@ -96,21 +95,14 @@ let myArray = [
   },
 ];
 
-const checkMove = evt => {
-  console.log(evt.draggedContext.element);
+const startMove = evt => {
+  console.log(evt);
 };
 </script>
 
 <template>
   <div class="draggable-Sidebar__2qD4V_wrapper">
-    <draggle
-      group="rows"
-      v-model="myArray"
-      item-key="id"
-      @start="drag = true"
-      @end="drag = false"
-      :move="checkMove"
-    >
+    <draggle group="rows" v-model="myArray" item-key="id" @start="startMove">
       <template #item="{ element }">
         <div class="draggable-Sidebar__2qD4V">
           <div v-html="element.svgDOM"></div>
