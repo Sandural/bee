@@ -1,21 +1,18 @@
 <script setup>
 import { NTabs, NTabPane } from "naive-ui";
-import ROWS from "@/components/rows/index.vue";
+import ROWSIDER from "@/components/rowsSidebar/index.vue";
 import CONTENTS from "@/components/contents/index.vue";
+import CONTENTSIDER from "@/components/contentsSidebar/index.vue";
 </script>
 
 <template>
   <div class="temp-left">
     <n-tabs type="segment" pane-style="padding-top: 18px;">
       <n-tab-pane name="chap1" tab="ROWS">
-        <ROWS></ROWS>
+        <ROWSIDER></ROWSIDER>
       </n-tab-pane>
       <n-tab-pane name="chap2" tab="CONTENT">
-        “威尔！着火了！快来帮忙！”我听到女朋友大喊。现在一个难题在我面前——是恢复一个重要的
-        Amazon 服务，还是救公寓的火。<br /><br />
-        我的脑海中忽然出现了 Amazon
-        著名的领导力准则”客户至上“，有很多的客户还依赖我们的服务，我不能让他们失望！所以着火也不管了，女朋友喊我也无所谓，我开始
-        debug 这个线上问题。
+        <CONTENTSIDER></CONTENTSIDER>
       </n-tab-pane>
       <n-tab-pane name="chap3" tab="SETTING">
         但是忽然，公寓的烟味消失，火警也停了。我的女朋友走进了房间，让我震惊的是，她摘下了自己的假发，她是

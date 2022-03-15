@@ -95,14 +95,21 @@ let myArray = [
   },
 ];
 
-const startMove = evt => {
+const startMove = (evt) => {
+  // 鼠标按下后, 改变 content 的样式
+  // 需要使用 通信库
   console.log(evt);
 };
 </script>
 
 <template>
   <div class="draggable-Sidebar__2qD4V_wrapper">
-    <draggle group="rows" v-model="myArray" item-key="id" @start="startMove">
+    <draggle
+      group="rows"
+      v-model="myArray"
+      item-key="id"
+      @mousedown="startMove"
+    >
       <template #item="{ element }">
         <div class="draggable-Sidebar__2qD4V">
           <div v-html="element.svgDOM"></div>
